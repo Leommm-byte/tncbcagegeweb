@@ -18,4 +18,3 @@ def admin():
     return render_template('admin.html', form=event_form)
 
 
-

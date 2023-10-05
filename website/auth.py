@@ -5,9 +5,9 @@ from .models import User
 from flask_login import login_user, login_required, logout_user
 from . import db
 
-authenticationbp = Blueprint('authentication', __name__, url_prefix='/authentication')
+authbp = Blueprint('authentication', __name__)
 
-@authenticationbp.route('/login', methods=['GET', 'POST'])
+@authbp.route('/login', methods=['GET', 'POST'])
 def login():
     login_form_instance = LoginForm()
     error = None
@@ -26,12 +26,12 @@ def login():
             error = 'Incorrect Username or Password'
         if error is None:
             login_user(u1)
-            return redirect(url_for('main.index'))
+            return render_template('admin.html')
         else:
             flash(error, 'danger')
     return render_template('login.html', form=login_form_instance, heading='Login')
 
-@authenticationbp.route('/register', methods=['GET', 'POST'])
+@authbp.route('/register', methods=['GET', 'POST'])
 def register():
     register_form_instance = RegisterForm()
 
@@ -40,8 +40,6 @@ def register():
         uname = register_form_instance.user_name.data
         pwd = register_form_instance.password.data
         email = register_form_instance.email.data
-        contact = register_form_instance.contact_num.data
-        address = register_form_instance.address.data
 
         # Check if the user exists
         u1 = User.query.filter_by(name=uname).first()
@@ -51,18 +49,11 @@ def register():
 
         pwd_hash = generate_password_hash(pwd)
         # Create a new user
-        new_user = User(name=uname, password_hash=pwd_hash, email_id=email, contact_num=contact, address=address)
+        new_user = User(name=uname, password_hash=pwd_hash, email_id=email)
         db.session.add(new_user)
         db.session.commit()
 
         flash('Account successfully created! Please login.', 'success')
-        return redirect(url_for('authentication.login'))
+        return redirect(url_for('main.admin'))
     else:
         return render_template('register.html', form=register_form_instance, heading='Register')
-
-@authenticationbp.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    flash("You have successfully logged out!", 'success')
-    return redirect(url_for('authentication.login'))

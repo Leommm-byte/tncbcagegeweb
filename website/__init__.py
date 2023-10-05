@@ -17,9 +17,18 @@ def create_app():
     db.init_app(app)
 
     from website.views import mainbp
-    from website.auth import authenticationbp
+    from website.auth import authbp
     app.register_blueprint(mainbp)
-    app.register_blueprint(authenticationbp)
+    app.register_blueprint(authbp)
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'authentication.login'
+    login_manager.init_app(app)
+
+    from .models import User
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
     # Initialise bootstrap
     bootstrap = Bootstrap(app)
@@ -29,6 +38,9 @@ def create_app():
     with app.app_context():
         db.create_all()
 
+    @app.before_first_request
+    def create_tables():
+        db.create_all()
 
     return app
 
