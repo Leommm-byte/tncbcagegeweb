@@ -49,14 +49,14 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
+            <a class="site-logo" href="{{ url_for('main.home') }}">
+                <img src="../static/images/logo.png" alt="Homepage">
             </a>
         </div>
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li class="current"><a href="index.html" title="Home">Home</a></li>
+                <li class="current"><a href="{{ url_for('main.home') }}" title="Home">Home</a></li>
                 <li><a href="about.html" title="About">About</a></li>
                 <li><a href="events.html" title="Services">Events</a></li>
                 <li><a href="contact.html" title="Contact us">Contact</a></li>	
@@ -70,7 +70,7 @@
 
     <!-- hero
     ================================================== -->
-    <section class="s-hero" data-parallax="scroll" data-image-src="images/hero-bg-3000.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section class="s-hero" data-parallax="scroll" data-image-src="../static/images/hero-bg-3000.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="hero-left-bar"></div>
 
@@ -78,9 +78,9 @@
 
             <div class="column large-full hero-content__text">
                 <h1>
-                    We Exist To <br>
-                    Honor God And <br>
-                    Make Disciples
+                    Christ in you <br>
+                    The Hope of Glory <br>
+                    Col 1:27
                 </h1>
 
                 <div class="hero-content__buttons">
@@ -128,7 +128,7 @@
                 Nostrum et ut optio suscipit eos quisquam et. Nulla molestiae 
                 voluptates hic et accusantium occaecati recusandae veniam cum.
                 </p>
-                <a href="about.html" class="btn btn--primary btn--about">More About Hesed</a>
+                <a href="about.html" class="btn btn--primary btn--about">More About TNCBC Agege</a>
             </div>
 
             <div class="column large-half medium-full">
@@ -139,21 +139,19 @@
                         First Service - 07:30 AM - 09:00 AM <br>
                         Sunday School - 09:00 AM - 10:00 AM <br>
                         Second Service - 10:00 AM - 12:00 PM <br>
-                        Ijaiye Lowcost Housing Estate, Ogba Rd, Lagos
                         </p>
                     </li>
                     <li>
                         <h4>Children's Church</h4>
                         <p>
                         Sunday - 10:00 AM - 12:00 PM <br>
-                        Ijaiye Lowcost Housing Estate, Ogba Rd, Lagos
                         </p>
                     </li>
                     <li>
-                        <h4>Prayer Meeting</h4>
+                        <h4>Mid-week Service</h4>
                         <p>
-                        Wednesday - 6:00 PM <br>
-                        Ijaiye Lowcost Housing Estate, Ogba Rd, Lagos
+                        Tuesday - 06:00 PM <br>
+                        Wednesday - 06:00 PM <br>
                         </p>
                     </li>
                 </ul> <!-- end about-sched-->
@@ -323,7 +321,7 @@
             <div class="column large-4 medium-5 tab-full">
                 <div class="footer-logo">
                     <a class="site-footer-logo" href="index.html">
-                        <img src="images/logo.svg" alt="Homepage">
+                        <img src="../static/images/logo.png" alt="Homepage">
                     </a>
                 </div>  <!-- footer-logo -->
                 <p>
@@ -337,13 +335,13 @@
                     <div class="column large-7 medium-full">
                         <h4 class="h6">Our Location</h4>
                         <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043 US
+                        The New Covenant Baptist Church,<br>
+                        Agege Lagos, Ijaiye Lowcost Housing estate,<br>
+                        Ogba Rd, Lagos
                         </p>
         
                         <p>
-                        <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" class="btn btn--footer">Get Direction</a>
+                        <a href="https://maps.app.goo.gl/j3Kas3yQrZS6qB686" target="_blank" class="btn btn--footer">Get Direction</a>
                         </p>
                     </div>
                     <div class="column large-5 medium-full">
@@ -363,8 +361,8 @@
 
         <div class="row footer-bottom">
             <div class="column ss-copyright">
-                <span>© Copyright Hesed 2019</span> 
-                <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                <span>© Copyright</span>
+                <span>Design by <a href="https://www.styleshout.com/">Tncbc Agege Media</a></span>
             </div>
         </div> <!-- footer-bottom -->
 

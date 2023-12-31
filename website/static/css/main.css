@@ -999,8 +999,8 @@ button.btn--primary,
 input[type="submit"].btn--primary,
 input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
-  background: #3b0d11;
-  border-color: #3b0d11;
+  background: #EB4747;
+  border-color: #EB4747;
   color: #ffffff;
 }
 
@@ -1835,7 +1835,7 @@ input::-moz-focus-inner {
 
 .header-logo img {
   width: 108px;
-  height: 28px;
+  height: 104px;
 }
 
 /* -------------------------------------------------------------------
@@ -1851,19 +1851,19 @@ input::-moz-focus-inner {
 .header-nav {
   list-style: none;
   font-family: "Montserrat", sans-serif;
-  font-size: .9rem;
+  font-size: 1.2rem;
   line-height: 4.8rem;
   text-transform: uppercase;
   letter-spacing: .35rem;
 }
 
 .header-nav a {
-  color: rgba(255, 255, 255, 0.8);
+  color: #EB4747;
 }
 
 .header-nav a:hover,
 .header-nav a:focus {
-  color: #fb8b23;
+  color: #000000;
 }
 
 .header-nav li {
@@ -2073,12 +2073,12 @@ input::-moz-focus-inner {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #050505;
-  opacity: .5;
+  /* background-color: #050505;
+  opacity: .1; */
 }
 
 .no-js .s-hero {
-  background: #000000;
+  background: #ffffff;
 }
 
 /* -------------------------------------------------------------------
@@ -2087,7 +2087,7 @@ input::-moz-focus-inner {
 .hero-left-bar {
   height: 100%;
   width: 8rem;
-  background-color: #000000;
+  background-color: #EB4747;
   opacity: .9;
   position: absolute;
   top: 0;
@@ -2118,7 +2118,7 @@ input::-moz-focus-inner {
   font-size: 7.6rem;
   line-height: 1.263;
   letter-spacing: 0;
-  color: #ffffff;
+  color: #EB4747;
   margin-top: 0;
   margin-right: 350px;
   padding-top: 3.2rem;
@@ -2147,8 +2147,8 @@ input::-moz-focus-inner {
 
 .hero-content__buttons .btn {
   display: block;
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: #EB4747;
+  color: #EB4747;
   width: 30rem;
   margin-right: 0;
 }
@@ -2181,7 +2181,7 @@ input::-moz-focus-inner {
 }
 
 .hero-social a {
-  color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   transition: all .5s;
 }
 
@@ -2520,12 +2520,12 @@ html.no-csstransitions .hero-content {
 .s-about {
   padding-top: 19.6rem;
   padding-bottom: 19.6rem;
-  background-color: #3b0d11;
+  background-color: #002C3E;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .s-about .subhead {
-  color: #fb8b23;
+  color: #EB4747;
   margin-bottom: 4rem;
 }
 
@@ -2538,8 +2538,8 @@ html.no-csstransitions .hero-content {
   display: block;
   width: 100%;
   margin-right: 0;
-  background-color: #21070a;
-  border-color: #21070a;
+  background-color: #EB4747;
+  border-color: #EB4747;
 }
 
 /* ------------------------------------------------------------------- 
@@ -2760,7 +2760,7 @@ html.no-csstransitions .hero-content {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000;
+  background-color: #002C3E;
   opacity: .75;
 }
 
@@ -2985,7 +2985,7 @@ html.no-csstransitions .hero-content {
 .s-social {
   padding-top: 10.4rem;
   padding-bottom: 9.6rem;
-  background-color: #000000;
+  background-color: #002C3E;
 }
 
 .social-content {
@@ -3133,7 +3133,7 @@ html.no-csstransitions .hero-content {
 .s-footer {
   padding-top: 12rem;
   padding-bottom: 8rem;
-  background-color: #3b0d11;
+  background-color: #000000;
   font-family: "Open Sans", sans-serif;
   font-size: 1.7rem;
   line-height: 1.882;
@@ -3178,8 +3178,8 @@ html.no-csstransitions .hero-content {
 }
 
 .footer-logo img {
-  width: 138px;
-  height: 36px;
+  width: 108px;
+  height: 104px;
 }
 
 /* -------------------------------------------------------------------
@@ -3321,8 +3321,8 @@ html.no-csstransitions .hero-content {
   }
 
   .footer-logo img {
-    width: 116px;
-    height: 30px;
+    width: 108px;
+    height: 104px;
   }
 
 }
