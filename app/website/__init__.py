@@ -21,8 +21,8 @@ def create_app():
     # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     db.init_app(app)
 
-    from website.views import mainbp
-    from website.auth import authbp
+    from ..website.views import mainbp
+    from ..website.auth import authbp
     app.register_blueprint(mainbp)
     app.register_blueprint(authbp)
 
