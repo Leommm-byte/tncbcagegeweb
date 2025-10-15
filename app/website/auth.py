@@ -1,9 +1,9 @@
 from flask import Blueprint, session, redirect, url_for, render_template, flash
-from website.forms import LoginForm, RegisterForm
+from app.website.forms import LoginForm, RegisterForm
 from werkzeug.security import generate_password_hash, check_password_hash
-from website.models import User
+from app.website.models import User
 from flask_login import login_user, login_required, logout_user
-from website import db
+from app.website import db
 
 authbp = Blueprint('authentication', __name__)
 
