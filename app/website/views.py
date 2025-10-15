@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from .models import Events, User
-from .forms import EventForm, LoginForm
+from website.models import Events, User
+from website.forms import EventForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
-from . import db
+from website import db
 from sqlalchemy import or_
 
 # Create main blueprint
