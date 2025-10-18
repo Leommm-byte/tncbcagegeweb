@@ -110,7 +110,7 @@ body {
 
 body {
   /* background: #121212; */
-  font-family: "Aptos", "Segoe UI", serif;
+  font-family: "Open Sans", serif;
   font-size: 2rem;
   font-style: normal;
   font-weight: normal;
@@ -145,7 +145,7 @@ a:active {
  * 
  * ------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Aptos", "Segoe UI", serif;
+  font-family: "Open Sans", serif;
   font-weight: 700;
   font-style: normal;
   color: #000000;
@@ -223,7 +223,7 @@ p img {
 }
 
 p.lead {
-  font-family: "Aptos", serif;
+  font-family: "Open Sans", serif;
   font-weight: 500;
   font-size: 2.8rem;
   line-height: 1.857;
@@ -255,13 +255,13 @@ b {
 
 em,
 i {
-  font-family: "Aptos", serif;
+  font-family: "Open Sans", serif;
   font-style: italic;
 }
 
 strong,
 b {
-  font-family: "Aptos", serif;
+  font-family: "Open Sans", serif;
   font-weight: 700;
 }
 
@@ -292,7 +292,7 @@ blockquote {
 }
 
 blockquote p {
-  font-family: "Aptos", serif;
+  font-family: "Open Sans", serif;
   font-weight: 400;
   padding: 0;
   font-size: 2.8rem;
@@ -334,7 +334,7 @@ blockquote cite a:visited {
 }
 
 abbr {
-  font-family: "Aptos", serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-variant: small-caps;
   text-transform: lowercase;
