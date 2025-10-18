@@ -145,7 +145,7 @@ a:active {
  * 
  * ------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Aptos", "Segoe UI", serif;
   font-weight: 700;
   font-style: normal;
   color: #000000;
@@ -223,7 +223,7 @@ p img {
 }
 
 p.lead {
-  font-family: "Lora", serif;
+  font-family: "Aptos", serif;
   font-weight: 500;
   font-size: 2.8rem;
   line-height: 1.857;
@@ -255,13 +255,13 @@ b {
 
 em,
 i {
-  font-family: "Lora", serif;
+  font-family: "Aptos", serif;
   font-style: italic;
 }
 
 strong,
 b {
-  font-family: "Lora", serif;
+  font-family: "Aptos", serif;
   font-weight: 700;
 }
 
@@ -292,7 +292,7 @@ blockquote {
 }
 
 blockquote p {
-  font-family: "Lora", serif;
+  font-family: "Aptos", serif;
   font-weight: 400;
   padding: 0;
   font-size: 2.8rem;
