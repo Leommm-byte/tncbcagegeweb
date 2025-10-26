@@ -110,7 +110,7 @@ body {
 
 body {
   /* background: #121212; */
-  font-family: "Lora", serif;
+  font-family: "Open Sans", serif;
   font-size: 2rem;
   font-style: normal;
   font-weight: normal;
@@ -145,7 +145,7 @@ a:active {
  * 
  * ------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", serif;
   font-weight: 700;
   font-style: normal;
   color: #000000;
@@ -223,7 +223,7 @@ p img {
 }
 
 p.lead {
-  font-family: "Lora", serif;
+  font-family: "Open Sans", serif;
   font-weight: 500;
   font-size: 2.8rem;
   line-height: 1.857;
@@ -255,13 +255,13 @@ b {
 
 em,
 i {
-  font-family: "Lora", serif;
+  font-family: "Open Sans", serif;
   font-style: italic;
 }
 
 strong,
 b {
-  font-family: "Lora", serif;
+  font-family: "Open Sans", serif;
   font-weight: 700;
 }
 
@@ -292,7 +292,7 @@ blockquote {
 }
 
 blockquote p {
-  font-family: "Lora", serif;
+  font-family: "Open Sans", serif;
   font-weight: 400;
   padding: 0;
   font-size: 2.8rem;
@@ -334,7 +334,7 @@ blockquote cite a:visited {
 }
 
 abbr {
-  font-family: "Lora", serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-variant: small-caps;
   text-transform: lowercase;
@@ -3457,7 +3457,7 @@ html.no-csstransitions .hero-content {
   margin-top: .6rem;
 }
 
-.church-staff__picture {
+.church-staff__picture1 {
   -webkit-flex: 0 0 8rem;
   -ms-flex: 0 0 8rem;
   flex: 0 0 8rem;
@@ -3465,11 +3465,32 @@ html.no-csstransitions .hero-content {
   margin-right: 2rem;
 }
 
-.church-staff__picture img {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
+.church-staff__picture img1 {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10%;
 }
+
+.church-staff__picture {
+  flex: 0 0 20rem;
+  max-width: 20rem;
+  margin-right: 2rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.church-staff__picture img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+
+
+
+
 
 /* ------------------------------------------------------------------- 
  * ## event page 
@@ -3581,3 +3602,28 @@ html.no-csstransitions .hero-content {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+
+/* custom class */
+.custom-paragraph {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #2b2b2b;
+  text-align: justify;
+  margin: 1.5rem 0;
+  letter-spacing: 0.3px;
+}
+
+
+.indented-list {
+  padding-left: 5rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #2b2b2b;
+  text-align: justify;
+  margin: 1.5rem 0;
+  letter-spacing: 0.3px;
+}
