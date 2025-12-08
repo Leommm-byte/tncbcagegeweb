@@ -3492,7 +3492,7 @@ html.no-csstransitions .hero-content {
  * ------------------------------------------------------------------- */
 
 .page-content {
-    background: linear-gradient(135deg, #4169E1 0%, #1E90FF 100%);
+    background: #f8f9fa;
     min-height: 70vh;
     padding: 4rem 0 6rem;
 }
