@@ -2141,11 +2141,12 @@ input::-moz-focus-inner {
  * ------------------------------------------------------------------- */
 .s-hero {
   width: 100%;
-  height: 100vh;
-  min-height: 82rem;
+  height: 100vh !important;
+  min-height: 65rem !important;  /* Reduced from 82rem */
   overflow: hidden;
   background-color: transparent;
   position: relative;
+  
 }
 
 .s-hero::before {
@@ -2825,9 +2826,9 @@ html.no-csstransitions .hero-content {
  *
  * ------------------------------------------------------------------- */
 .s-series {
-  padding-top: 19.2rem;
-  padding-bottom: 19.2rem;
-  min-height: 80rem;
+  padding-top: 8rem !important;     /* Reduced from 19.2rem */
+  padding-bottom: 8rem !important;  /* Reduced from 19.2rem */
+  min-height: auto !important;      /* Changed from 80rem */
   background-color: #050505;
   background-image: url(../images/pattern.jpg);
   background-size: 760px 380px;
@@ -2885,7 +2886,7 @@ html.no-csstransitions .hero-content {
  * ## series content 
  * ------------------------------------------------------------------- */
 .series-content {
-  padding: 12rem 6.8rem 8.8rem;
+  padding: 6rem 6.8rem 4rem !important;  /* Reduced from 12rem 6.8rem 8.8rem */
   max-width: 1340px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
@@ -2973,6 +2974,10 @@ html.no-csstransitions .hero-content {
 
 .series-content__subscribe-links .ss-youtube a {
   background-image: url(../images/icons/podcast/icon-youtube.svg);
+}
+
+#offline-img {
+  max-height: 500px !important;  /* Limit the image height */
 }
 
 /* ------------------------------------------------------------------- 
@@ -3491,7 +3496,7 @@ html.no-csstransitions .hero-content {
  * Contact Page Styles - contact.css
  *
  * ------------------------------------------------------------------- */
-/*
+
 .page-content {
     background: #f8f9fa;
     min-height: 70vh;
@@ -3501,7 +3506,7 @@ html.no-csstransitions .hero-content {
 .contact-header {
     text-align: center;
     padding: 2rem 2rem 3rem;
-}*/
+}
 
 .contact-header h1 {
     font-size: 3.5rem;
