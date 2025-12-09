@@ -2229,6 +2229,43 @@ input::-moz-focus-inner {
   bottom: 3.2rem;
 }
 
+/* Add this to your main.css */
+
+.hero-content__buttons .btn--stroke {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid #EB4747 !important;
+  color: #EB4747 !important;
+  font-size: 1.4rem !important;
+  padding: 0 4rem !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content__buttons .btn--stroke:hover {
+  background: #EB4747 !important;
+  border-color: #EB4747 !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(235, 71, 71, 0.3);
+}
+
+/* Add icons before text (optional but cool!) */
+.hero-content__buttons .btn--stroke:nth-child(1)::before {
+  content: "🎵 ";
+  margin-right: 8px;
+}
+
+.hero-content__buttons .btn--stroke:nth-child(2)::before {
+  content: "📅 ";
+  margin-right: 8px;
+}
+
+.hero-content__buttons .btn--stroke:nth-child(3)::before {
+  content: "ℹ️ ";
+  margin-right: 8px;
+}
+
 .hero-content__buttons .btn {
   display: block;
   border-color: #EB4747;
