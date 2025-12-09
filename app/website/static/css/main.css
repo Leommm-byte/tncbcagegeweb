@@ -1852,7 +1852,7 @@ input::-moz-focus-inner {
 .header-nav {
   list-style: none;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   line-height: 4.8rem;
   text-transform: uppercase;
   letter-spacing: .35rem;
@@ -1860,6 +1860,7 @@ input::-moz-focus-inner {
 
 .header-nav a {
   color: #EB4747;
+  font-size: 1.8rem;
 }
 
 .header-nav a:hover,
@@ -3490,7 +3491,7 @@ html.no-csstransitions .hero-content {
  * Contact Page Styles - contact.css
  *
  * ------------------------------------------------------------------- */
-
+/*
 .page-content {
     background: #f8f9fa;
     min-height: 70vh;
@@ -3500,7 +3501,7 @@ html.no-csstransitions .hero-content {
 .contact-header {
     text-align: center;
     padding: 2rem 2rem 3rem;
-}
+}*/
 
 .contact-header h1 {
     font-size: 3.5rem;
