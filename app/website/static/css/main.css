@@ -1860,7 +1860,7 @@ input::-moz-focus-inner {
 
 .header-nav a {
   color: #EB4747;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .header-nav a:hover,
@@ -2230,7 +2230,7 @@ input::-moz-focus-inner {
 }
 
 /* Add this to your main.css */
-
+/* 
 .hero-content__buttons .btn--stroke {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 2px solid #EB4747 !important;
@@ -2250,7 +2250,7 @@ input::-moz-focus-inner {
   box-shadow: 0 8px 25px rgba(235, 71, 71, 0.3);
 }
 
-/* Add icons before text (optional but cool!) */
+Add icons before text (optional but cool!) 
 .hero-content__buttons .btn--stroke:nth-child(1)::before {
   content: "🎵 ";
   margin-right: 8px;
@@ -2265,6 +2265,7 @@ input::-moz-focus-inner {
   content: "ℹ️ ";
   margin-right: 8px;
 }
+*/
 
 .hero-content__buttons .btn {
   display: block;
