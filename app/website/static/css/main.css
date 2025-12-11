@@ -1969,7 +1969,7 @@ input::-moz-focus-inner {
   height: 4.2rem;
   width: 4.2rem;
   line-height: 4.2rem;
-  display: none;
+  display: none !important;    /* Hidden by default - shown via media query */
   z-index: 102;
   font-family: "Lora", serif;
   font-size: 1.4rem;
