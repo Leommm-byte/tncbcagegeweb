@@ -1973,15 +1973,17 @@ input::-moz-focus-inner {
   z-index: 102;
   font-family: "Lora", serif;
   font-size: 1.4rem;
+  font-size: 0 !important;
+  text-indent: -9999px !important;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   color: #000;                 /* Toggle text/icon = BLACK on white header */
   transition: all .3s;
 }
-
+/*
 .header-menu-toggle span:first-of-type {
   display: none !important;
-}
+}*/
 
 /* Hover effect */
 .header-menu-toggle:hover,
