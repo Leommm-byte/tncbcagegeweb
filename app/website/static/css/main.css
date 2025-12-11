@@ -1969,7 +1969,7 @@ input::-moz-focus-inner {
   height: 4.2rem;
   width: 4.2rem;
   line-height: 4.2rem;
-  display: none !important;    /* Hidden by default - shown via media query */
+  display: none;   /* Hidden by default - shown on small screens via media query */
   z-index: 102;
   font-family: "Lora", serif;
   font-size: 1.4rem;
@@ -1977,6 +1977,10 @@ input::-moz-focus-inner {
   text-transform: uppercase;
   color: #000;                 /* Toggle text/icon = BLACK on white header */
   transition: all .3s;
+}
+
+.header-menu-toggle span:first-of-type {
+  display: none !important;
 }
 
 /* Hover effect */
