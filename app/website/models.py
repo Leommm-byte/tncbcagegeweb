@@ -10,6 +10,7 @@ class Events(db.Model):
     date = db.Column(db.Date)
     time = db.Column(db.Time)
     location = db.Column(db.String(256))
+    image = db.Column(db.String(256), nullable=True)  # Store image filename
     
 
 class User(db.Model, UserMixin):

@@ -13,7 +13,9 @@ class EventForm(FlaskForm):
     description = StringField('Description', validators=[InputRequired('Description is required')])
     date = DateField('Date')
     time = TimeField('Time', validators=[InputRequired('Time is required')])
-    location = StringField('Location', default="The New Covenant Baptist Church, Agege")
+    location = StringField('Location', default="The New Covenant Baptist Church, Ifako-Ijaiye")
+    from flask_wtf.file import FileField, FileAllowed, FileRequired
+    image = FileField('Event Image', validators=[FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
     submit = SubmitField("Submit")
 
 class RegisterForm(FlaskForm):
