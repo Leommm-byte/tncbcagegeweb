@@ -3,8 +3,6 @@ from wtforms.fields import SubmitField, StringField, PasswordField, DateField, T
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
 from flask_ckeditor import CKEditorField
 
-
-
 class LoginForm(FlaskForm):
     name = StringField('User Name', validators=[InputRequired('User Name is required')])
     password = PasswordField('Password', validators=[InputRequired('Password is required')])
@@ -16,8 +14,7 @@ class EventForm(FlaskForm):
     date = DateField('Date')
     time = TimeField('Time', validators=[InputRequired('Time is required')])
     location = StringField('Location', default="The New Covenant Baptist Church, Ifako-Ijaiye")
-    from flask_wtf.file import FileField, FileAllowed, FileRequired
- 
+    submit = SubmitField("Submit")
 
 class RegisterForm(FlaskForm):
     user_name = StringField('User Name', validators=[InputRequired('User Name is required')])
@@ -28,4 +25,3 @@ class RegisterForm(FlaskForm):
     confirm = PasswordField('Confirm Password', validators=[InputRequired()])
     #submit button
     submit = SubmitField("Register")
-
