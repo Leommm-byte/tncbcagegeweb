@@ -3,6 +3,7 @@ from app.website.models import Events, User
 from app.website.forms import EventForm, LoginForm, RegisterForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from .utils import save_event_image, delete_event_image
 from flask_mail import Message
 from app.website import db
 from app.website import mail
@@ -101,7 +102,7 @@ def login():
 
     return render_template("login.html", form=user_login, logged_in=current_user.is_authenticated)
 
-@mainbp.route('/admin', methods=['GET', 'POST'])
+'''@mainbp.route('/admin', methods=['GET', 'POST'])
 @login_required
 def admin():
     event_form = EventForm()
@@ -122,6 +123,31 @@ def admin():
 
         return redirect(url_for("main.all_post"))
     
+    return render_template('admin.html', form=event_form)'''
+
+@mainbp.route('/admin', methods=['GET', 'POST'])
+@login_required
+def admin():
+    event_form = EventForm()
+
+    if event_form.validate_on_submit():
+        # Save the image if uploaded
+        image_filename = save_event_image(event_form.image.data)
+        
+        new_event = Events(
+            name = event_form.name.data,
+            description = event_form.description.data,
+            date = event_form.date.data,
+            time = event_form.time.data,
+            location = event_form.location.data,
+            image = image_filename
+        )
+
+        db.session.add(new_event)
+        db.session.commit()
+        
+        return redirect(url_for("main.all_post"))
+    
     return render_template('admin.html', form=event_form)
 
 
@@ -132,10 +158,24 @@ def all_post():
     return render_template('admin-events.html', all_events=events)
 
 
+'''@mainbp.route("/admin/delete/<int:event_id>")
+@login_required
+def delete_post(event_id):
+    event_to_delete = Events.query.get(event_id)
+    Events.query.filter(Events.id == event_id).delete()
+    db.session.delete(event_to_delete)
+    db.session.commit()
+    return redirect(url_for('main.all_post'))'''
+
 @mainbp.route("/admin/delete/<int:event_id>")
 @login_required
 def delete_post(event_id):
     event_to_delete = Events.query.get(event_id)
+    
+    # Delete the associated image from filesystem
+    if event_to_delete.image:
+        delete_event_image(event_to_delete.image)
+    
     Events.query.filter(Events.id == event_id).delete()
     db.session.delete(event_to_delete)
     db.session.commit()
