@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms.fields import SubmitField, StringField, PasswordField, DateField, TimeField
 from wtforms.validators import InputRequired, Length, Email, EqualTo, NumberRange
 from flask_ckeditor import CKEditorField
-from flask_wtf.file import FileField, FileAllowed, FileRequired   
+
 
 
 class LoginForm(FlaskForm):
@@ -17,8 +17,7 @@ class EventForm(FlaskForm):
     time = TimeField('Time', validators=[InputRequired('Time is required')])
     location = StringField('Location', default="The New Covenant Baptist Church, Ifako-Ijaiye")
     from flask_wtf.file import FileField, FileAllowed, FileRequired
-    image = FileField('Event Image', validators=[FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
-    submit = SubmitField("Submit")
+ 
 
 class RegisterForm(FlaskForm):
     user_name = StringField('User Name', validators=[InputRequired('User Name is required')])

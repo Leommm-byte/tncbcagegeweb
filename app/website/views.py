@@ -12,7 +12,6 @@ import time
 import requests
 from dotenv import load_dotenv
 load_dotenv()
-from .utils import save_event_image, delete_event_image
 
 livestream_cache = {'data': None, 'timestamp': 0}
 
@@ -30,10 +29,9 @@ def prayer_requests():
     return render_template('prayer_requests.html')
 
 
-@mainbp.route('/event/<int:event_id>')
-def single_event(event_id):
-    event = Events.query.get_or_404(event_id)
-    return render_template('events-single.html', event=event)
+@mainbp.route('/show-event')
+def single_event():
+    return render_template('events-single.html')
 
 
 @mainbp.route('/events')
@@ -94,6 +92,7 @@ def login():
         if user is not None:
             if check_password_hash(user.password_hash, user_login.password.data):
                 login_user(user)
+
                 return redirect(url_for("main.admin"))
             else:
                 flash("Password incorrect, please try again.")
@@ -102,42 +101,59 @@ def login():
 
     return render_template("login.html", form=user_login, logged_in=current_user.is_authenticated)
 
-
 @mainbp.route('/admin', methods=['GET', 'POST'])
+@login_required
+def admin():
+    event_form = EventForm()
+
+
+    if event_form.validate_on_submit():
+        new_event = Events(
+            name = event_form.name.data,
+            description = event_form.description.data,
+            date = event_form.date.data,
+            time = event_form.time.data,
+            location = event_form.location.data
+        )
+
+        db.session.add(new_event)
+        db.session.commit()
+        
+
+        return redirect(url_for("main.all_post"))
+    
+    return render_template('admin.html', form=event_form)
+
+'''inbp.route('/admin', methods=['GET', 'POST'])
 @login_required
 def admin():
     event_form = EventForm()
 
     if event_form.validate_on_submit():
         # Save the image if uploaded
-        image_filename = None
-        if event_form.image.data and event_form.image.data.filename != '':
-            image_filename = save_event_image(event_form.image.data)
-            if image_filename is None:
-                flash("Failed to save image. Please make sure it's a valid image file (jpg, png, jpeg, gif).", "error")
-                return render_template('admin.html', form=event_form)
+        image_filename = save_event_image(event_form.image.data)
         
         new_event = Events(
-            name=event_form.name.data,
-            description=event_form.description.data,
-            date=event_form.date.data,
-            time=event_form.time.data,
-            location=event_form.location.data,
-            image=image_filename
+            name = event_form.name.data,
+            description = event_form.description.data,
+            date = event_form.date.data,
+            time = event_form.time.data,
+            location = event_form.location.data,
+            image = image_filename
         )
 
         db.session.add(new_event)
         db.session.commit()
-        flash("Event created successfully!", "success")
+        
         return redirect(url_for("main.all_post"))
     
-    return render_template('admin.html', form=event_form)
+    return render_template('admin.html', form=event_form)'''
 
 
 @mainbp.route('/admin/all-post')
-@login_required
 def all_post():
     events = Events.query.all()
+
     return render_template('admin-events.html', all_events=events)
 
 
@@ -145,19 +161,24 @@ def all_post():
 @login_required
 def delete_post(event_id):
     event_to_delete = Events.query.get(event_id)
-    
-    if not event_to_delete:
-        flash("Event not found!", "error")
-        return redirect(url_for('main.all_post'))
+    Events.query.filter(Events.id == event_id).delete()
+    db.session.delete(event_to_delete)
+    db.session.commit()
+    return redirect(url_for('main.all_post'))
+
+'''@mainbp.route("/admin/delete/<int:event_id>")
+@login_required
+def delete_post(event_id):
+    event_to_delete = Events.query.get(event_id)
     
     # Delete the associated image from filesystem
     if event_to_delete.image:
         delete_event_image(event_to_delete.image)
     
+    Events.query.filter(Events.id == event_id).delete()
     db.session.delete(event_to_delete)
     db.session.commit()
-    flash("Event deleted successfully!", "success")
-    return redirect(url_for('main.all_post'))
+    return redirect(url_for('main.all_post'))'''
 
 
 @mainbp.route('/logout')
