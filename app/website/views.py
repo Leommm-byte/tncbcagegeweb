@@ -3,7 +3,6 @@ from app.website.models import Events, User
 from app.website.forms import EventForm, LoginForm, RegisterForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
-from .utils import save_event_image, delete_event_image
 from flask_mail import Message
 from app.website import db
 from app.website import mail
@@ -13,6 +12,7 @@ import time
 import requests
 from dotenv import load_dotenv
 load_dotenv()
+from .utils import save_event_image, delete_event_image
 
 livestream_cache = {'data': None, 'timestamp': 0}
 
