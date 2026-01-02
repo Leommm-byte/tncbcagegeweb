@@ -1786,6 +1786,12 @@ input::-moz-focus-inner {
 
 }
 
+.links {
+  display: flex;
+  gap: 20px;          /* space between links */
+  justify-content: center;
+  align-items: center;
+}
 
 /* ===================================================================
  * # site header
