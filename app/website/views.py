@@ -247,7 +247,7 @@ def send_contact():
         msg = Message(
             subject=f"Contact Form: Message from {name}",
             sender=email,
-            recipients=['tncbctv@gmail.com'],
+            recipients=[os.environ.get('MAIL_USERNAME')],
             reply_to=email,
             body=f"Name: {name}\nEmail: {email}\n\nMessage: {message}"
         )
@@ -270,7 +270,7 @@ def send_prayer_request():
         msg = Message(
             subject=f"Prayer Request from {name}",
             sender=email,
-            recipients=['tncbctv@gmail.com'],
+            recipients=[os.environ.get('MAIL_USERNAME')],
             reply_to=email,
             body=f"Name: {name}\nEmail: {email}\n\nPrayer Request: {message}"
         )
